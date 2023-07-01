@@ -12,7 +12,7 @@ phases:
     commands:
       - echo "Cloning the GitHub repository..."
       - git clone https://github.com/karthik-yml/test
-      - cd test123
+      - cd test
       - echo "Creating and activating a virtual environment..."
       - virtualenv venv
       - chmod +x venv/bin/activate
