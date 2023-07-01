@@ -15,7 +15,8 @@ phases:
       - cd test123
       - echo "Creating and activating a virtual environment..."
       - virtualenv venv
-      - source venv/bin/activate
+      - chmod +x venv/bin/activate
+      - ./venv/bin/activate
       - echo "Installing Python dependencies..."
       - pip install -r requirements.txt
   build:
