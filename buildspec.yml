@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Installing dependencies..."
+      - pip install --upgrade pip
+      - pip install virtualenv
+  pre_build:
+    commands:
+      - echo "Cloning the GitHub repository..."
+      - git clone https://github.com/karthik-yml/test
+      - cd test123
+      - echo "Creating and activating a virtual environment..."
+      - virtualenv venv
+      - source venv/bin/activate
+      - echo "Installing Python dependencies..."
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo "Running migrations..."
+      - python manage.py migrate
+  post_build:
+    commands:
+      - echo "Starting the Django development server..."
+      - python manage.py runserver 0.0.0.0:8000
